@@ -4,10 +4,10 @@ import CharacterCard from './CharacterCard';
 const CharacterList=(props)=>{
  const dataList= props.dataList
     return(
-        <ul>
+        <ul className="characterlist__container">
             {dataList
             .map(characterItem =>
-                <li key={characterItem.id}>
+                <li className="charactercard__firstcontainer" key={characterItem.id}>
                     <CharacterCard
                     image={characterItem.image}
                     name={characterItem.name}

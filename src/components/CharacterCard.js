@@ -2,7 +2,7 @@ import React from 'react';
 
 const CharacterCard = (props) => {
     return (
-        <div className="charactercard__container">
+        <div className="charactercard__secondcontainer">
             <div className="charactercard__container--image">
                 <img src={props.image} alt={props.name} />
             </div>

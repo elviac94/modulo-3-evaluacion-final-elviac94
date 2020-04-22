@@ -1,0 +1,12 @@
+.characterlist__container{
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+
+    & .charactercard__firstcontainer{
+        background-color: blue;
+    }
+}
