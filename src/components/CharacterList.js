@@ -12,7 +12,6 @@ const CharacterList=(props)=>{
                 <li className="charactercard__firstcontainer" key={characterItem.id}>
                     <Link className="link" to={`character/${characterItem.id}`}>
                     <CharacterCard
-                    key={characterItem.id}
                     image={characterItem.image}
                     name={characterItem.name}
                     species={characterItem.species}

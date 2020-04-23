@@ -38,11 +38,8 @@ class App extends React.Component {
     for (let character of allCharacters) {
       if (character.id === parseInt(urlId)) {
         return <CharacterDetail characterItem={character} />
-      }else{
-        return <p>personaje no encontrado</p>
-      }
+       }
     }
-
   }
 
   render() {

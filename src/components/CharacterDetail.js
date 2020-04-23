@@ -2,7 +2,7 @@ import React from 'react';
 
 const CharacterDetail = (props) => {
     return (
-        <li className="characterdetail__container" id={props.characterItem.id}>
+        <div className="characterdetail__container" >
             <div className="characterdetail__container--image">
                 <img src={props.characterItem.image} alt={props.characterItem.name} />
             </div>
@@ -13,8 +13,7 @@ const CharacterDetail = (props) => {
                 <span className="characterdetail--origin">origin: {props.characterItem.origin.name}</span>
                 <span className="characterdetail--episodes">episodes: {props.characterItem.name}</span>
             </div>
-
-        </li>
+        </div>
     )
 }
 export default CharacterDetail;
