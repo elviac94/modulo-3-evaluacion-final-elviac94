@@ -3,6 +3,8 @@ import '../stylesheet/App.scss';
 import fetchResult from '../services/Fetch';
 import CharacterList from './CharacterList';
 import Filters from './Filters';
+import CharacterDetail from './CharacterDetail';
+import { Switch, Route } from 'react-router-dom';
 
 class App extends React.Component {
   constructor(props) {
@@ -11,7 +13,8 @@ class App extends React.Component {
       data: [],
       inputValue: ''
     }
-    this.handleInput = this.handleInput.bind(this)
+    this.handleInput = this.handleInput.bind(this);
+    this.renderCharacterDetail = this.renderCharacterDetail.bind(this);
   }
 
   componentDidMount() {
@@ -29,18 +32,36 @@ class App extends React.Component {
     })
   }
 
+  renderCharacterDetail(props) {
+    const urlId = props.match.params.id;
+    const allCharacters = this.state.data;
+    for (let character of allCharacters) {
+      if (character.id === parseInt(urlId)) {
+        return <CharacterDetail characterItem={character} />
+      }else{
+        return <p>personaje no encontrado</p>
+      }
+    }
+
+  }
+
   render() {
     const { data, inputValue } = this.state;
     return (
       <div className="App">
-        <Filters
-          inputValue={inputValue}
-          handleInput={this.handleInput}
-        />
-        <CharacterList
-          dataList={data}
-          inputValue={inputValue}
-        />
+        <Switch>
+          <Route exact path='/'>
+          <Filters
+            inputValue={inputValue}
+            handleInput={this.handleInput}
+          />
+          <CharacterList
+            dataList={data}
+            inputValue={inputValue}
+          />
+          </Route>
+          <Route path='/character/:id' render={this.renderCharacterDetail}/>
+        </Switch>
       </div>
     );
   }

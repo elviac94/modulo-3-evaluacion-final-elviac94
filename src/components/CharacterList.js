@@ -1,5 +1,6 @@
 import React from 'react';
 import CharacterCard from './CharacterCard';
+import { Link } from 'react-router-dom';
 
 const CharacterList=(props)=>{
  const {dataList, inputValue}= props
@@ -9,11 +10,14 @@ const CharacterList=(props)=>{
             .filter(characterItem => inputValue === "" || characterItem.name.toLowerCase().includes(inputValue.toLowerCase()) )
             .map(characterItem =>
                 <li className="charactercard__firstcontainer" key={characterItem.id}>
+                    <Link className="link" to={`character/${characterItem.id}`}>
                     <CharacterCard
+                    key={characterItem.id}
                     image={characterItem.image}
                     name={characterItem.name}
                     species={characterItem.species}
                     />
+                    </Link>
                 </li>
                 )}
 
