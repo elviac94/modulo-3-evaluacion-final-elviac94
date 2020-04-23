@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const CharacterList = (props) => {
     const { dataList, inputValue } = props
-    const foundCharacter = dataList.length === 0 ? <h3>No hay ningún personaje que coincida con la palabra {inputValue}</h3> :''
+    const foundCharacter = !dataList.length ? <h3 className="text-input-erro">No hay ningún personaje que coincida con la palabra {inputValue}</h3> :''
     return (
         <div>
             {foundCharacter}
