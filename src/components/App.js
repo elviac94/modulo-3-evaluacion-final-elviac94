@@ -15,6 +15,7 @@ class App extends React.Component {
     }
     this.handleInput = this.handleInput.bind(this);
     this.renderCharacterDetail = this.renderCharacterDetail.bind(this);
+    this.applyFilters=this.applyFilters.bind(this);
   }
 
   componentDidMount() {
@@ -32,6 +33,12 @@ class App extends React.Component {
     })
   }
 
+  applyFilters(){
+    const{ data, inputValue} = this.state
+    return data
+    .filter(characterObj=> inputValue === '' || characterObj.name.toLowerCase().includes(inputValue.toLowerCase()) )
+  }
+
   renderCharacterDetail(props) {
     const urlId = props.match.params.id;
     const allCharacters = this.state.data;
@@ -43,7 +50,7 @@ class App extends React.Component {
   }
 
   render() {
-    const { data, inputValue } = this.state;
+    const { inputValue } = this.state;
     return (
       <div className="App">
         <Switch>
@@ -53,7 +60,7 @@ class App extends React.Component {
             handleInput={this.handleInput}
           />
           <CharacterList
-            dataList={data}
+            dataList={this.applyFilters()}
             inputValue={inputValue}
           />
           </Route>
