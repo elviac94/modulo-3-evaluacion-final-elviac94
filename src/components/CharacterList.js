@@ -2,10 +2,11 @@ import React from 'react';
 import CharacterCard from './CharacterCard';
 
 const CharacterList=(props)=>{
- const dataList= props.dataList
+ const {dataList, inputValue}= props
     return(
         <ul className="characterlist__container">
             {dataList
+            .filter(characterItem => inputValue === "" || characterItem.name.toLowerCase().includes(inputValue.toLowerCase()) )
             .map(characterItem =>
                 <li className="charactercard__firstcontainer" key={characterItem.id}>
                     <CharacterCard

@@ -39,6 +39,7 @@ class App extends React.Component {
         />
         <CharacterList
           dataList={data}
+          inputValue={inputValue}
         />
       </div>
     );
