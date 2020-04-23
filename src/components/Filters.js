@@ -6,9 +6,10 @@ const Filters = (props) => {
         const value= event.target.value;
         props.handleInput(value)
     }
-
+    const preventDefault=(event)=>event.preventDefault()
+     
     return (
-        <form>
+        <form onSubmit={preventDefault}>
             <label htmlFor="title"></label>
             <input
                 type="text"
