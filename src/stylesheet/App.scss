@@ -1,9 +1,11 @@
+@import './header';
 @import './characterList';
 @import'./characterDetail';
 
 .App {
   text-align: center;
-  background-color: black;
+  background-image: url(../images/vialactea.jpg);
+  background-size: cover;
   width: 100%;
 }
 

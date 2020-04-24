@@ -4,6 +4,7 @@ import fetchResult from '../services/Fetch';
 import CharacterList from './CharacterList';
 import Filters from './Filters';
 import CharacterDetail from './CharacterDetail';
+import Header from './Header';
 import { Switch, Route } from 'react-router-dom';
 
 class App extends React.Component {
@@ -66,6 +67,7 @@ class App extends React.Component {
       <div className="App">
         <Switch>
           <Route exact path='/'>
+            <Header />
             <Filters
               inputValue={inputValue}
               handleInput={this.handleInput}
