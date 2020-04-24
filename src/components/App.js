@@ -28,7 +28,7 @@ class App extends React.Component {
     const info = JSON.parse(localStorage.getItem('Info'))
     if (info !== null) {
       this.setState({
-        inputValue: info.inputValue
+        inputValue: info
       })
     }
   }
