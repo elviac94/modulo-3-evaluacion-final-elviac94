@@ -15,7 +15,7 @@ class App extends React.Component {
     }
     this.handleInput = this.handleInput.bind(this);
     this.renderCharacterDetail = this.renderCharacterDetail.bind(this);
-    this.applyFilters=this.applyFilters.bind(this);
+    this.applyFilters = this.applyFilters.bind(this);
   }
 
   componentDidMount() {
@@ -25,6 +25,12 @@ class App extends React.Component {
           data: data.results
         })
       })
+    const info = JSON.parse(localStorage.getItem('Info'))
+    if (info !== null) {
+      this.setState({
+        inputValue: info.inputValue
+      })
+    }
   }
 
   handleInput(value) {
@@ -33,10 +39,14 @@ class App extends React.Component {
     })
   }
 
-  applyFilters(){
-    const{ data, inputValue} = this.state
+  componentDidUpdate() {
+    localStorage.setItem('Info', JSON.stringify(this.state.inputValue))
+  }
+
+  applyFilters() {
+    const { data, inputValue } = this.state
     return data
-    .filter(characterObj=> inputValue === '' || characterObj.name.toLowerCase().includes(inputValue.toLowerCase()) )
+      .filter(characterObj => inputValue === '' || characterObj.name.toLowerCase().includes(inputValue.toLowerCase()))
   }
 
   renderCharacterDetail(props) {
@@ -45,7 +55,7 @@ class App extends React.Component {
     for (let character of allCharacters) {
       if (character.id === parseInt(urlId)) {
         return <CharacterDetail characterItem={character} />
-       }
+      }
     }
   }
 
@@ -55,16 +65,16 @@ class App extends React.Component {
       <div className="App">
         <Switch>
           <Route exact path='/'>
-          <Filters
-            inputValue={inputValue}
-            handleInput={this.handleInput}
-          />
-          <CharacterList
-            dataList={this.applyFilters()}
-            inputValue={inputValue}
-          />
+            <Filters
+              inputValue={inputValue}
+              handleInput={this.handleInput}
+            />
+            <CharacterList
+              dataList={this.applyFilters()}
+              inputValue={inputValue}
+            />
           </Route>
-          <Route path='/character/:id' render={this.renderCharacterDetail}/>
+          <Route path='/character/:id' render={this.renderCharacterDetail} />
         </Switch>
       </div>
     );
