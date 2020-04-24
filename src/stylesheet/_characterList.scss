@@ -5,11 +5,16 @@
     justify-content: space-around;
     align-items: center;
     width: 100%;
+    padding: 0px;
 
     & .charactercard__firstcontainer{
         background-color: blue;
     }
 }
 h3{
+    color:red;
+}
+
+p{
     color:red;
 }
