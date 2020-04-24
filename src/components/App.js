@@ -52,10 +52,10 @@ class App extends React.Component {
   renderCharacterDetail(props) {
     const urlId = props.match.params.id;
     const allCharacters = this.state.data;
-    const users= allCharacters.find(user=>user.id===parseInt(urlId))
-    if(users){
+    const users = allCharacters.find(user => user.id === parseInt(urlId))
+    if (users) {
       return <CharacterDetail characterItem={users} />
-    }else{
+    } else {
       return <p>El personaje que buscas no existe</p>
     }
   }
