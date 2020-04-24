@@ -1,12 +1,16 @@
-@import './header';
-@import './characterList';
-@import'./characterDetail';
+@import "./header";
+@import "./characterList";
+@import "./characterDetail";
+@import "./characterCard";
 
 .App {
   text-align: center;
   background-image: url(../images/vialactea.jpg);
   background-size: cover;
-  width: 100%;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
 }
-
-

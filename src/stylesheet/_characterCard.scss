@@ -1,0 +1,21 @@
+.charactercard__secondcontainer {
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+
+  & .charactercard__container--image {
+    width: 60%;
+
+    & img {
+      width: 100%;
+    }
+  }
+
+  & h2{
+      font-size: 15px;
+      color: rgb(89, 138, 60);
+  }
+}
