@@ -1,6 +1,11 @@
 form {
 max-width: 220px;
 
+@media all and (min-width:768px){
+    max-width: 400px;
+    width: 300px;
+}
+
   & input {
     background-color: transparent;
     color: rgb(165, 202, 74); 

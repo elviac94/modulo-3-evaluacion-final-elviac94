@@ -3,10 +3,16 @@
   border-radius: 5%;
   border: rgb(165, 202, 74) solid 4px;
   max-width: 280px;
+  width: 100%;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   padding: 5px;
+
+  @media all and (min-width:768px){
+    max-width: 400px;
+    width: 100%;
+  }
 
   & .characterdetail__container--image {
     width: 50%;
@@ -24,6 +30,7 @@
     align-items: center;
     margin-left: 5px;
     width: 40%;
+    justify-content: space-around;
 
     & .button-link {
       text-decoration: none;
@@ -33,7 +40,7 @@
       & .back-button {
         font-size: 10px;
         border-radius: 10%;
-        background-color: lightblue;
+        background-color: black;
         color: rgb(165, 202, 74);
         outline: none;
         border: rgb(165, 202, 74) solid 2px;

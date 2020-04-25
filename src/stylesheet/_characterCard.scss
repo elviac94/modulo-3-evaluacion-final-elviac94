@@ -14,21 +14,17 @@
     }
   }
 
-  & h2{
-      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode';
-      text-transform: uppercase;
-      margin: 0px;
-      font-size: 16px;
-      color:white;
-
-      @media all and(min-width:768px){
-        font-size: 12px;
-      }
-  }
-
-  & h3{
+  & h2,
+  h3 {
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+      "Lucida Sans Unicode";
+    text-transform: uppercase;
     margin: 0px;
-    font-size: 20px;
+    font-size: 16px;
     color: white;
+
+    @media all and(min-width:768px) {
+      font-size: 12px;
+    }
   }
 }

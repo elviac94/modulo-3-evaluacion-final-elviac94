@@ -1,15 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faWalking, faSkullCrossbones, faHeartbeat } from '@fortawesome/free-solid-svg-icons';
+import { faWalking, faSkullCrossbones, faHeartbeat,faUserSecret } from '@fortawesome/free-solid-svg-icons';
 import { faRedditAlien, } from '@fortawesome/free-brands-svg-icons';
 
 const CharacterDetail = (props) => {
     const { image, name, status, species, origin, episode } = props.characterItem;
 
-    const Specie = species === 'Human' ? <FontAwesomeIcon icon={faWalking} /> : <FontAwesomeIcon icon={faRedditAlien} />
+    const Specie = species === 'Human' ? <FontAwesomeIcon className="walking" icon={faWalking} /> : <FontAwesomeIcon className="alien" icon={faRedditAlien} />
 
-    const isAlive = status === 'Alive' ? <FontAwesomeIcon icon={faHeartbeat} /> : <FontAwesomeIcon icon={faSkullCrossbones} />
+    const isAlive = status === 'Alive' ? <FontAwesomeIcon className="heart" icon={faHeartbeat} /> :
+    status === 'unknown'? <FontAwesomeIcon className="unknown" icon={faUserSecret} /> : <FontAwesomeIcon className="skull" icon={faSkullCrossbones} />
 
     return (
         <div className="characterdetail__container" >
