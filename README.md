@@ -1,4 +1,4 @@
-(https://alminuto.info/wp-content/uploads/2017/08/giphy-24.gif)
+https://alminuto.info/wp-content/uploads/2017/08/giphy-24.gif
 # Evaluación módulo 3: Buscador de personajes. :pencil:
 El ejercicio consiste en desarrollar una página web con un listado de personajes de **Rick and Morty**, que podemos filtrar por el nombre del personaje. Vamos a usar React para realizarlo, su ejecución se estructura como veremos a continuación.:point_down:
 
