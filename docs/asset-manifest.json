@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "./static/css/main.899d1c74.chunk.css",
+    "main.js": "./static/js/main.2aeacc19.chunk.js",
+    "main.js.map": "./static/js/main.2aeacc19.chunk.js.map",
+    "runtime-main.js": "./static/js/runtime-main.3a7121df.js",
+    "runtime-main.js.map": "./static/js/runtime-main.3a7121df.js.map",
+    "static/js/2.8c80a218.chunk.js": "./static/js/2.8c80a218.chunk.js",
+    "static/js/2.8c80a218.chunk.js.map": "./static/js/2.8c80a218.chunk.js.map",
+    "index.html": "./index.html",
+    "precache-manifest.1b5ae5da4189f2538996d7a9914350d2.js": "./precache-manifest.1b5ae5da4189f2538996d7a9914350d2.js",
+    "service-worker.js": "./service-worker.js",
+    "static/css/main.899d1c74.chunk.css.map": "./static/css/main.899d1c74.chunk.css.map",
+    "static/js/2.8c80a218.chunk.js.LICENSE.txt": "./static/js/2.8c80a218.chunk.js.LICENSE.txt",
+    "static/media/Rick_and_Morty_-_logo_(English).png": "./static/media/Rick_and_Morty_-_logo_(English).75509f2e.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.3a7121df.js",
+    "static/js/2.8c80a218.chunk.js",
+    "static/css/main.899d1c74.chunk.css",
+    "static/js/main.2aeacc19.chunk.js"
+  ]
+}
