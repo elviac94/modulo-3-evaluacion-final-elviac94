@@ -6,20 +6,20 @@ import { faRedditAlien, } from '@fortawesome/free-brands-svg-icons';
 
 const CharacterDetail = (props) => {
     const { image, name, status, species, origin, episode } = props.characterItem;
-    
+
     const Specie = species === 'Human' ? <FontAwesomeIcon icon={faWalking} /> : <FontAwesomeIcon icon={faRedditAlien} />
 
     const isAlive = status === 'Alive' ? <FontAwesomeIcon icon={faHeartbeat} /> : <FontAwesomeIcon icon={faSkullCrossbones} />
 
     return (
         <div className="characterdetail__container" >
-            <Link className="button-link" to='/'>
-                <button className="back-button"> Go back </button>
-            </Link>
             <div className="characterdetail__container--image">
                 <img src={image} alt={name} />
             </div>
             <div className="characterdetail__container--info">
+                <Link className="button-link" to='/'>
+                    <button className="back-button"> Go back </button>
+                </Link>
                 <h2 className="characterdetail--name">{name}</h2>
                 <span className="characterdetail--status">status: {isAlive}</span>
                 <span className="characterdetail--species">species: {Specie}</span>
