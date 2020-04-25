@@ -30,6 +30,10 @@
       background-color: transparent;
       border-radius: 5%;
       border: rgb(165, 202, 74) solid 4px;
+
+       &:hover{
+           border-style: dashed;
+       }
     }
   }
 }
