@@ -13,6 +13,7 @@ const Filters = (props) => {
         <form onSubmit={preventDefault}>
             <label htmlFor="title"></label>
             <input
+                placeholder="Name"
                 type="text"
                 id="title"
                 name="title"
