@@ -6,11 +6,12 @@
 .App {
   text-align: center;
   background-image: url(../images/vialactea.jpg);
+  background-repeat: repeat;
   background-size: cover;
   max-width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   padding: 20px;
+ 
 }
