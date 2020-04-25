@@ -13,8 +13,8 @@ const CharacterDetail = (props) => {
 
     return (
         <div className="characterdetail__container" >
-            <Link to='/'>
-                <button>Volver</button>
+            <Link className="button-link" to='/'>
+                <button className="back-button"> Go back </button>
             </Link>
             <div className="characterdetail__container--image">
                 <img src={image} alt={name} />

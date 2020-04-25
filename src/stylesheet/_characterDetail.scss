@@ -5,9 +5,28 @@
   max-width: 280px;
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
+  padding: 5px;
+
+  & .button-link {
+    text-decoration: none;
+    display: block;
+    order: 2;
+
+    & .back-button {
+      font-size: 10px;
+      border-radius: 10%;
+      background-color: lightblue;
+      color: rgb(165, 202, 74);
+      outline: none;
+      border: rgb(165, 202, 74) solid 2px;
+      
+    }
+  }
 
   & .characterdetail__container--image {
-    width: 60%;
+    width: 50%;
+    order: 0;
 
     & img {
       width: 100%;
@@ -17,11 +36,16 @@
   & .characterdetail__container--info {
     display: flex;
     flex-direction: column;
+    order: 1;
+    align-items: center;
+    margin-left: 5px;
+    width: 40%;
 
     & h2,
     span {
+      display: block;
       margin: 0px;
-      font-size: 16px;
+      font-size: 14px;
       color: white;
     }
   }
