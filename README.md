@@ -1,4 +1,4 @@
-![enter image description here](https://i0.pngocean.com/files/396/63/736/rick-sanchez-morty-smith-rick-and-morty-season-3-television-show-adult-swim-rick-and-morty.jpg)enter code here
+
 # Evaluación módulo 3: Buscador de personajes. :pencil:
 El ejercicio consiste en desarrollar una página web con un listado de personajes de **Rick and Morty**, que podemos filtrar por el nombre del personaje. Vamos a usar React para realizarlo, su ejecución se estructura como veremos a continuación.:point_down:
 
