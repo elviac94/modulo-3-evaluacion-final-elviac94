@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const Filters = (props) => {
 
@@ -22,5 +23,10 @@ const Filters = (props) => {
             />
         </form>
     )
+};
+
+Filters.propTypes = {
+    inputValue: PropTypes.string
 }
+
 export default Filters;

@@ -1,6 +1,7 @@
 import React from "react";
 import CharacterCard from "./CharacterCard";
 import { Link } from "react-router-dom";
+import PropTypes from 'prop-types';
 
 const CharacterList = (props) => {
     const { dataList, inputValue } = props;
@@ -8,10 +9,7 @@ const CharacterList = (props) => {
     const foundCharacter = !dataList.length ? (
         <h3 className="text-input-error">
             No hay ningún personaje que coincida con la palabra {inputValue}
-        </h3>
-    ) : (
-            ""
-        );
+        </h3>) : ("");
 
     return (
         <main className="main__container">
@@ -45,4 +43,13 @@ const CharacterList = (props) => {
         </main>
     );
 };
+
+CharacterList.propTypes = {
+    image: PropTypes.string,
+    name: PropTypes.string,
+    species: PropTypes.string,
+    inputValue: PropTypes.string,
+    dataList: PropTypes.array
+}
+
 export default CharacterList;
