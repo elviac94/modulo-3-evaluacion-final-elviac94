@@ -12,9 +12,12 @@ class App extends React.Component {
     super(props);
     this.state = {
       data: [],
-      inputValue: ''
+      inputValue: '',
+      isFemale: false,
+      
     }
     this.handleInput = this.handleInput.bind(this);
+    this.handleGender = this.handleGender.bind(this);
     this.renderCharacterDetail = this.renderCharacterDetail.bind(this);
     this.applyFilters = this.applyFilters.bind(this);
   }
@@ -40,14 +43,24 @@ class App extends React.Component {
     })
   }
 
+  handleGender(){
+    this.setState(prevState=>{
+      return{
+        isFemale: !prevState.isFemale
+      }
+    })
+  }
+
   componentDidUpdate() {
     localStorage.setItem('Info', JSON.stringify(this.state.inputValue))
   }
 
   applyFilters() {
-    const { data, inputValue } = this.state
+    
+    const { data, inputValue, isFemale } = this.state
     return data
       .filter(characterObj => inputValue === '' || characterObj.name.toLowerCase().includes(inputValue.toLowerCase()))
+      .filter(characterObj => !isFemale || ( isFemale && characterObj.gender ==='Female'))
   }
 
   renderCharacterDetail(props) {
@@ -62,7 +75,7 @@ class App extends React.Component {
   }
 
   render() {
-    const { inputValue } = this.state;
+    const { inputValue, isFemale } = this.state;
     return (
       <div className="App">
         <Switch>
@@ -70,7 +83,9 @@ class App extends React.Component {
             <Header />
             <Filters
               inputValue={inputValue}
+              isFemale={isFemale}
               handleInput={this.handleInput}
+              handleGender={this.handleGender}
             />
             <CharacterList
               dataList={this.applyFilters()}
