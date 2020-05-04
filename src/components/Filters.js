@@ -8,8 +8,9 @@ const Filters = (props) => {
         props.handleInput(value)
     }
     
-    const getGender=()=>{
-        props.handleGender()
+    const getGender=(event)=>{
+        const idGender= event.currentTarget.id
+        props.handleGender(idGender)
     }
 
     const preventDefault = (event) => event.preventDefault()
@@ -25,11 +26,20 @@ const Filters = (props) => {
                 value={props.inputValue}
                 onChange={getInputValue}
             />
-            <label htmlFor="female"> Female
+            <label htmlFor="Female"> Female
                 <input
                 type="checkbox"
-                id="female"
+                id="Female"
                 value={props.isFemale}
+                onChange={getGender}
+                />
+            </label>
+
+            <label htmlFor="Male"> Male
+                <input
+                type="checkbox"
+                id="Male"
+                value={props.isMale}
                 onChange={getGender}
                 />
             </label>

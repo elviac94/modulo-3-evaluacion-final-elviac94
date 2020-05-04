@@ -14,6 +14,7 @@ class App extends React.Component {
       data: [],
       inputValue: '',
       isFemale: false,
+      isMale: false
       
     }
     this.handleInput = this.handleInput.bind(this);
@@ -43,12 +44,22 @@ class App extends React.Component {
     })
   }
 
-  handleGender(){
-    this.setState(prevState=>{
-      return{
-        isFemale: !prevState.isFemale
-      }
-    })
+  handleGender(idGender){
+    if(idGender==="Female"){
+      this.setState(prevState=>{
+        return{
+          isFemale: !prevState.isFemale
+        }
+      })
+    } else{
+      this.setState(prevState=>{
+        return{
+          isMale: !prevState.isMale,
+        }
+      })
+
+    }
+    
   }
 
   componentDidUpdate() {
@@ -57,10 +68,11 @@ class App extends React.Component {
 
   applyFilters() {
     
-    const { data, inputValue, isFemale } = this.state
+    const { data, inputValue, isFemale, isMale } = this.state
     return data
       .filter(characterObj => inputValue === '' || characterObj.name.toLowerCase().includes(inputValue.toLowerCase()))
       .filter(characterObj => !isFemale || ( isFemale && characterObj.gender ==='Female'))
+      .filter(characterObj => !isMale || ( isMale && characterObj.gender ==='Male'))
   }
 
   renderCharacterDetail(props) {
@@ -75,7 +87,7 @@ class App extends React.Component {
   }
 
   render() {
-    const { inputValue, isFemale } = this.state;
+    const { inputValue, isFemale, isMale } = this.state;
     return (
       <div className="App">
         <Switch>
@@ -84,6 +96,7 @@ class App extends React.Component {
             <Filters
               inputValue={inputValue}
               isFemale={isFemale}
+              isMale={isMale}
               handleInput={this.handleInput}
               handleGender={this.handleGender}
             />
